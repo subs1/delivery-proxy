@@ -1,0 +1,13 @@
+MVMT0009345128JTEBV71J50B0119120000220200112085724O05879182FIL       ATC        037878                        00000000
+
+    0009345128 (VehicleBatch, Start=4, Length=10)
+              JTEBV71J50B011912 (VIN, Start=15, Length=17)
+                               00002 (MovementSequenceNumber, Start=31, Length=5) 
+                                    0 (MovementType Start=36, Length=1)
+                                     200112085724 (MovementDateTime, Start=37, Length=12)
+                                                 O05879182 (LoadNumber, Start=49, Length=9)
+                                                          FIL (CurrentLocation, Start=58, Length=10)
+                                                                    ATC (NextLocation, Start=68, Length=11)
+                                                                               037878 (FinalDestinationLocation, Start=79, Length=6)
+                                    
+    

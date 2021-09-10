@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.susi.integration</groupId>
+	<artifactId>delivery-proxy</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+    		<maven.build.timestamp.format>yyyyMMdd_HHmm</maven.build.timestamp.format>
+ 	 </properties>
+
+	<dependencies>
+	
+	<dependency>
+		<groupId>org.susi.integration</groupId>
+		<artifactId>codeobe_sdk</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+		   <groupId>com.google.code.gson</groupId>
+		   <artifactId>gson</artifactId> 
+		   <version>2.8.2</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.github.cliftonlabs/json-simple -->
+		<dependency>
+		    <groupId>com.github.cliftonlabs</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>2.1.2</version>
+		</dependency>
+		
+		
+		<dependency>
+	    	<groupId>org.springframework.integration</groupId>
+	    	<artifactId>spring-integration-ftp</artifactId>
+	    	<version>5.2.3.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+      <groupId>org.springframework.integration</groupId>
+      <artifactId>spring-integration-jms</artifactId>
+    </dependency>
+    
+	<dependency>
+	    <groupId>javax.jms</groupId>
+	    <artifactId>javax.jms-api</artifactId>
+	    <version>2.0.1</version>
+	</dependency>
+			
+	<dependency>
+	    <groupId>org.springframework.integration</groupId>
+	    <artifactId>spring-integration-sftp</artifactId>
+	    <version>5.2.3.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework.integration</groupId>
+	    <artifactId>spring-integration-http</artifactId>
+	    <version>5.2.4.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient</artifactId>
+		<version>4.5.10</version>
+	</dependency>
+
+ <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.integration</groupId>
+      <artifactId>spring-integration-http</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Hoxton.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<plugin>
+			    <groupId>pl.project13.maven</groupId>
+			    <artifactId>git-commit-id-plugin</artifactId>
+			    <version>2.2.4</version>
+			    <executions>
+			        <execution>
+			            <id>get-the-git-infos</id>
+			            <goals>
+			                <goal>revision</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			    <configuration>
+			        <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+			        <prefix>git</prefix>
+			        <verbose>false</verbose>
+			        <format>json</format>
+			        <gitDescribe>
+			            <skip>false</skip>
+			            <always>false</always>
+			            <dirty>-dirty</dirty>
+			        </gitDescribe>
+			    </configuration>
+			</plugin>
+
+			<!--
+			<plugin>
+			  <groupId>com.spotify</groupId>
+			  <artifactId>dockerfile-maven-plugin</artifactId>
+			  <version>1.4.13</version>
+			     <executions>
+                        <execution>
+                          <id>default</id>
+                          <goals>
+                            <goal>build</goal>
+                          </goals>
+                          <phase>install</phase>
+                        </execution>
+                        
+                        <execution>
+                          <id>tag-version</id>
+                          <goals>
+                            <goal>tag</goal>
+                            <goal>push</goal>
+                          </goals>
+                          <configuration>
+                            <tag>${git.commit.id.abbrev}-${maven.build.timestamp}</tag>
+                          </configuration>
+                         <phase>install</phase>
+                        </execution>
+                    </executions>
+		    <configuration>
+			    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+			    <repository>susisacr.azurecr.io/integration/${project.artifactId}</repository>
+				<skip>false</skip>
+			  </configuration>
+			 
+			  
+			</plugin>
+            -->
+		</plugins>
+	</build>
+
+
+	
+
+</project>

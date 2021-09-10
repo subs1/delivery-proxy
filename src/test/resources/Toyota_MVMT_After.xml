@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SOAP-ENV:Header>
+		<ToyotaHeaders xmlns="http://webservices.toyota.com.au/schema/headers/0.1/headers.xsd">
+            <SenderID>Patrick</SenderID>
+            <SentDateTime>2020-01-11T22:45:07Z</SentDateTime>
+            <MessageID>9142771</MessageID>
+            <ConversationID>9142771</ConversationID>
+            <RespondTo>urn:null</RespondTo>
+            <NotificationEmail>integration@patrick.com.au</NotificationEmail>
+        </ToyotaHeaders>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<SupplyChainStatusMsg schemaVersion="1" xmlns="http://webservices.toyota.com.au/schema/ISD/supplychainstatus/2008/06/02/SupplyChainStatus.xsd">
+            <VehicleBatch>0009345128</VehicleBatch>
+            <MovementSequenceNumber>00002</MovementSequenceNumber>
+            <VIN>JTEBV71J50B011912</VIN>
+            <CurrentLocation>FIL</CurrentLocation>
+            <NextLocation>ATC</NextLocation>
+            <MovementType>O</MovementType>
+            <MovementDateTime>2020-01-12T08:57:24.0+10:00</MovementDateTime>
+            <FinalDestinationLocation>037878</FinalDestinationLocation>
+            <LoadNumber>05879182</LoadNumber>
+        </SupplyChainStatusMsg>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
